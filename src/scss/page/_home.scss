@@ -1,0 +1,34 @@
+.category {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: $--margin-s;
+    place-items: center;
+    width: 100%;
+  }
+}
+.category-tabs {
+  &__btns {
+    margin: $--margin-s auto;
+    & button {
+      margin-left: $--margin-s;
+    }
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $--margin-m;
+  margin: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .category {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

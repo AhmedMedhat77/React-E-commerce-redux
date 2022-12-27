@@ -1,0 +1,22 @@
+.icon {
+  cursor: pointer;
+  color: $--color-dark-white;
+  transition: $--transition;
+  &:hover {
+    color: $--text-color;
+  }
+  &--s {
+    @extend .typo--s;
+  }
+  &--l {
+    @extend .typo--l;
+  }
+  &--rounded-lg {
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: $--color-white;
+    color: $--color-darker-white;
+    padding: $--paddding-s;
+  }
+}

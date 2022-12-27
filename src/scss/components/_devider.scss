@@ -1,0 +1,31 @@
+.devider {
+  width: 100%;
+  background-size: cover;
+  padding: $--paddding-s $--paddding-m;
+  background-position: center;
+  align-items: center;
+  display: flex;
+  border-radius: $--paddding-xs1;
+
+  &__left {
+    & h3 {
+      @extend .typo--xl;
+      max-width: 70%;
+      color: $--color-white;
+    }
+    & p {
+      @extend .typo--l;
+      color: $--color-darker-white;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .devider {
+    flex-direction: column;
+    margin: auto;
+    &__left {
+      margin-bottom: $--margin-m;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.category-card {
+  background-color: #1f2637;
+  padding: $--paddding-m;
+  border-radius: $--paddding-xs2;
+  text-align: center;
+  height: max-content;
+  cursor: pointer;
+  &__img {
+    margin-bottom: $--margin-xs1;
+    position: relative;
+    overflow: hidden;
+    width: 9rem;
+    height: 9rem;
+    &:hover .overlay {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    .overlay {
+      transition: $--transition;
+      position: absolute;
+      opacity: 0;
+      border-radius: 50%;
+      background-color: #1f26376b;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &:before {
+        content: "+";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $--color-white;
+        @extend .typo--2xl;
+      }
+    }
+  }
+
+  &__text {
+    &__title {
+      color: $--color-white;
+      @extend .typo--s;
+      margin-bottom: $--margin-xs1;
+    }
+    &__count {
+      color: $--color-darker-white;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.btn {
+  border: none;
+  outline: none;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: transparent;
+    color: $--color-primary;
+  }
+  &--m {
+    padding: 1.2rem 1.5rem;
+  }
+  &--l {
+    padding: 2.2rem 3rem;
+  }
+  &--primary {
+    color: $--color-dark-white;
+    background: $--gradient-primary;
+    font-weight: 600;
+    &:hover {
+      color: $--color-white;
+    }
+  }
+  &--secondary {
+    color: $--color-darker-white;
+    background-color: $--color-primary;
+    &:hover,
+    &:active {
+      color: $--color-white;
+      background: $--gradient-primary;
+    }
+  }
+  &--rounded-s {
+    border-radius: 1rem;
+  }
+  &--rounded-m {
+    border-radius: 1.5rem;
+  }
+}

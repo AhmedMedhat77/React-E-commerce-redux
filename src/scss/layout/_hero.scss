@@ -1,0 +1,64 @@
+.hero {
+  background-image: url("../../assets//banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  @extend .flex-center;
+  .container {
+    flex-direction: column;
+  }
+  &__text {
+    & span {
+      color: $--color-darker-white;
+    }
+    margin-bottom: $--margin-m;
+    color: $--color-white;
+    &__title {
+      margin-bottom: $--margin-s;
+      line-height: 1;
+      @extend .typo--2xl;
+      font-weight: 600;
+      & label {
+        display: block;
+        & span {
+          color: $--text-color;
+        }
+      }
+    }
+    &__description {
+      @extend .typo--xs;
+    }
+  }
+  &__actions {
+    position: relative;
+    margin-bottom: $--margin-s;
+    & p {
+      margin-top: 2rem;
+      color: #fff;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 20px;
+      background-color: gray;
+      left: 22%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    align-items: center;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-radius: $--paddding-s;
+    & input {
+      background-color: transparent;
+    }
+    & select {
+      padding: $--paddding-m;
+      outline: none;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}

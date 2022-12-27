@@ -1,0 +1,88 @@
+:root {
+  // colors
+  --color-primary: #0a2748;
+  --navbar--border: #2a2f3d;
+  --color-secondary: #c6452c;
+  --text-color: #f04f35;
+  --color-white: #fff;
+  --color-dark-white: #cde4da;
+  --color-darker-white: #9eb0cc;
+  --gradient-primary: linear-gradient(90deg, #ff4267 40%, #ff4b2e 100%);
+  --body-color: #161b28;
+
+  // paddings
+  --paddding-xs1: 0.4rem;
+  --paddding-xs2: 0.8rem;
+  --paddding-s: 1.2rem;
+  --paddding-m: 2.4rem;
+  --paddding-l: 3.2rem;
+  --paddding-xl: 4rem;
+
+  // margins
+  --margin-xs1: 0.4rem;
+  --margin-xs2: 0.8rem;
+  --margin-s: 1.2rem;
+  --margin-m: 2.4rem;
+  --margin-l: 3.2rem;
+  --margin-xl: 4rem;
+
+  // fonts
+  --font-size-xs: 1.2rem;
+  --font-size-s: 1.4rem;
+  --font-size-m: 1.6rem;
+  --font-size-l: 1.8rem;
+  --font-size-xl: 2.4rem;
+  --font-size-2xl: 2.8rem;
+
+  // transitions
+  --transition: all 0.3s linear;
+}
+// colors
+$--color-primary: var(--color-primary);
+$--navbar--border: var(--navbar--border);
+$--color-secondary: var(--color-secondary);
+$--text-color: var(--text-color);
+$--color-white: var(--color-dark-white);
+$--color-dark-white: var(--color-dark-white);
+$--color-darker-white: var(--color-darker-white);
+$--gradient-primary: var(--gradient-primary);
+$--body-color: var(--body-color);
+
+// paddings
+$--paddding-xs1: var(--paddding-xs1);
+$--paddding-xs2: var(--paddding-xs2);
+$--paddding-s: var(--paddding-s);
+$--paddding-m: var(--paddding-m);
+$--paddding-l: var(--paddding-l);
+$--paddding-xl: var(--paddding-xl);
+
+// margins
+$--margin-xs1: var(--margin-xs1);
+$--margin-xs2: var(--margin-xs2);
+$--margin-s: var(--margin-s);
+$--margin-m: var(--margin-m);
+$--margin-l: var(--margin-l);
+$--margin-xl: var(--margin-xl);
+
+// font size
+$--font-size-xs: var(--font-size-xs);
+$--font-size-s: var(--font-size-s);
+$--font-size-m: var(--font-size-m);
+$--font-size-l: var(--font-size-l);
+$--font-size-xl: var(--font-size-xl);
+$--font-size-2xl: var(--font-size-2xl);
+
+// transitions
+$--transition: var(--transition);
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

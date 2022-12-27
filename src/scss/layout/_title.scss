@@ -1,0 +1,14 @@
+.main-title {
+  width: 100%;
+  text-align: center;
+  & h2 {
+    @extend .typo--xl;
+    color: $--color-white;
+    margin-bottom: $--margin-s;
+    text-transform: capitalize;
+  }
+  & p {
+    @extend .typo--s;
+    color: $--color-darker-white;
+  }
+}

@@ -1,0 +1,25 @@
+//google font
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+//abstracts Mixins
+@import "./abstracts/mixin";
+@import "./abstracts/variables";
+// base and roots
+@import "./base/reset";
+@import "./base/typography";
+
+// components
+@import "./components//categoryCard";
+@import "./components/productCard";
+@import "./components/devider";
+
+//layouts
+@import "./layout/navbar";
+@import "./layout/hero";
+@import "./layout/search";
+@import "./layout//btns";
+@import "./layout/icons";
+@import "./layout/title";
+
+//pages
+@import "./page/home";

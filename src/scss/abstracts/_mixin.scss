@@ -1,0 +1,29 @@
+@mixin media-prop($property, $lap: "nil", $ipad: "nil", $phone: "nil") {
+  @if $phone != "nil" {
+    @media only screen and (max-width: 375px) {
+      #{$property}: $phone;
+    }
+  }
+  @if $ipad != "nil" {
+    @media (min-width: 375px) and (max-width: 1024px) {
+      #{$property}: $ipad;
+    }
+  }
+  @if $lap != "nil" {
+    @media only screen and (min-width: 1024px) {
+      #{$property}: $lap;
+    }
+  }
+}
+
+@mixin direction($value, $leftProperty, $rightProperty) {
+  body[dir="rtl"] & {
+    #{$rightProperty}: $value;
+  }
+  body &{
+    #{$leftProperty}: $value;
+  }
+  body[dir="ltr"] &{
+    #{$leftProperty}: $value;
+  }
+}
