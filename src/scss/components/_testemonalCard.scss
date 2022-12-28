@@ -1,0 +1,24 @@
+.testemonal-card {
+  border-radius: $--paddding-s;
+  background-color: $--color-primary;
+  padding: $--paddding-m;
+  position: relative;
+  color: $--color-dark-white;
+  text-align: center;
+  &__rate {
+    @extend .typo--m;
+    & svg {
+      color: orange;
+    }
+  }
+  &__text {
+    @extend .typo--xs;
+    margin-bottom: $--margin-s;
+    text-align: start;
+  }
+  &__title {
+    @extend .typo--m;
+    color: $--color-white;
+    margin-bottom: $--margin-xs1;
+  }
+}

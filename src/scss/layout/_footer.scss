@@ -1,0 +1,9 @@
+.footer {
+  padding: $--paddding-m;
+  @extend .typo--l;
+  color: $--color-dark-white;
+  @extend .flex-between;
+  & img {
+    max-width: 20rem;
+  }
+}

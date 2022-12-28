@@ -8,6 +8,9 @@ import TrendingProductsData from "../../api/dummyData/trendingProducts";
 import ProductCard from "../../components/productCard/ProductCard";
 import Devider from "../../components/devider/Devider";
 import MainBtn from "../../components/button/MainBtn";
+import TestemonalCard from "../../components/testemonalCard/TestemonalCard";
+import TESTEMONALS from "../../api/dummyData/testemonals";
+import NewsLetter from "../../components/newsLetter/NewsLetter";
 const Home = () => {
   return (
     <>
@@ -103,7 +106,10 @@ Check the hottest designs of the week. These rising stars are worth your attenti
             />
           </div>
         </div>
-        <section className="trending-products">
+        <section
+          className="trending-products"
+          style={{ borderBottom: "1px solid #343a40" }}
+        >
           <Titile
             title=" trending products"
             description="
@@ -127,6 +133,32 @@ Check the hottest designs of the week. These rising stars are worth your attenti
             </div>
           </div>
         </section>
+      </section>
+      <section className="testemonal">
+        <div className="container">
+          <div className="grid">
+            {TESTEMONALS.map((item) => {
+              return (
+                <TestemonalCard
+                  name={item.name}
+                  text={item.text}
+                  key={item.id}
+                  job={item.job}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="news-section">
+        <NewsLetter
+          type="btn--primary"
+          name="Subscribe"
+          top="OUR NEWSLETTER"
+          title="Up To 20% Off Your First Order"
+          description="Subscribe to the Gosto mailing list to receive updates on new arrivals
+          & other discount information."
+        />
       </section>
     </>
   );

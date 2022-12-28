@@ -21,7 +21,12 @@
   gap: $--margin-m;
   margin: auto;
 }
-
+.news-section {
+  background: url(../../assets/dotsBanner.jpg);
+  background-size: cover;
+  min-height: 40vh;
+  @extend .flex-center;
+}
 @media screen and (max-width: 700px) {
   .category {
     .container {

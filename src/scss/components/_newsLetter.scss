@@ -1,0 +1,21 @@
+.news-letter {
+  .container {
+    flex-direction: column;
+  }
+  &__text {
+    color: $--color-darker-white;
+    text-align: center;
+    & h6 {
+      color: $--text-color;
+      @extend .typo--xs;
+      margin-bottom: $--margin-s;
+    }
+    & h3 {
+      @extend .typo--xl;
+    }
+    & p {
+      @extend .typo--s;
+      margin-bottom: $--margin-m;
+    }
+  }
+}
