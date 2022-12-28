@@ -10,9 +10,32 @@ import {
 } from "react-icons/ai";
 import { HiShoppingBag } from "react-icons/hi";
 import MainBtn from "../../components/button/MainBtn";
+import { useSelector } from "react-redux";
 
 const Navbar = (props) => {
   const [mobile, setMobile] = useState(false);
+  const cartCount = useSelector((s) => s.product.cart.count);
+
+  const navbarLinks = React.useMemo(() => {
+    return (
+      <ul
+        className={mobile ? "navbar__center__mobile" : "navbar__center__menu"}
+      >
+        {props.routes.map((route) => {
+          return (
+            <li className="navbar__center__menu__item" key={route.id}>
+              <Link
+                to={route.path}
+                className="navbar__center__menu__item__link"
+              >
+                {route.name}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }, [mobile, props.routes]);
   return (
     <header className="header">
       <div className="container">
@@ -27,26 +50,7 @@ const Navbar = (props) => {
               <img src={logo} alt="Gosto" />
             </div>
           </div>
-          <div className="navbar__center">
-            <ul
-              className={
-                mobile ? "navbar__center__mobile" : "navbar__center__menu"
-              }
-            >
-              {props.routes.map((route) => {
-                return (
-                  <li className="navbar__center__menu__item" key={route.id}>
-                    <Link
-                      to={route.path}
-                      className="navbar__center__menu__item__link"
-                    >
-                      {route.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <div className="navbar__center">{navbarLinks}</div>
           <div className="navbar__right">
             <div className="navbar__right__actions">
               <Search placeHolder="search products..." />
@@ -62,10 +66,11 @@ const Navbar = (props) => {
                 name="MY CART"
                 type="btn--primary"
                 size="btn--l"
-                count="0"
+                count={cartCount}
                 isRounded="btn--rounded-m"
-                icon={<HiShoppingBag />}
-              />
+              >
+                <HiShoppingBag />
+              </MainBtn>
             </div>
           </div>
         </nav>

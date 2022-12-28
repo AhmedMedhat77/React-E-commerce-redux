@@ -19,4 +19,4 @@ const TestemonalCard = (props) => {
   );
 };
 
-export default TestemonalCard;
+export default React.memo(TestemonalCard);

@@ -19,4 +19,4 @@ const Devider = (props) => {
   );
 };
 
-export default Devider;
+export default React.memo(Devider);

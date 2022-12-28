@@ -14,7 +14,14 @@ const ProductCard = (props) => {
         <button className="icon icon--rounded-lg">
           <AiOutlineSearch />
         </button>
-        <button className="icon icon--rounded-lg">
+        <button
+          className="icon icon--rounded-lg"
+          onClick={() => {
+            const newItem = { ...props };
+            delete newItem.onCartClick;
+            props.onCartClick(newItem);
+          }}
+        >
           <HiShoppingBag />
         </button>
       </div>
@@ -33,4 +40,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);

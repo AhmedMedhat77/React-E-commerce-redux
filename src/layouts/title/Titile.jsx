@@ -1,6 +1,6 @@
 import React from "react";
 
-const Titile = (props) => {
+const Title = (props) => {
   return (
     <div className="main-title">
       <h2>{props.title}</h2>
@@ -9,4 +9,4 @@ const Titile = (props) => {
   );
 };
 
-export default Titile;
+export default React.memo(Title);

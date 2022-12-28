@@ -16,4 +16,4 @@ const NewsLetter = (props) => {
   );
 };
 
-export default NewsLetter;
+export default React.memo(NewsLetter);

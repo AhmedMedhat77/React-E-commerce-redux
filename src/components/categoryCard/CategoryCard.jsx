@@ -5,9 +5,7 @@ const CategoryCard = (props) => {
     <div className="category-card">
       <div className="category-card__img">
         <img src={props?.img} alt={props.name} />
-        <div className="overlay">
-            
-        </div>
+        <div className="overlay"></div>
       </div>
       <div className="category-card__text">
         <h4 className="category-card__text__title">{props.name}</h4>
@@ -17,4 +15,4 @@ const CategoryCard = (props) => {
   );
 };
 
-export default CategoryCard;
+export default React.memo(CategoryCard);

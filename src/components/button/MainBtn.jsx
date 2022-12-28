@@ -3,7 +3,7 @@ import React from "react";
 const MainBtn = (props) => {
   return (
     <button className={`btn ${props?.type} ${props?.size} ${props?.isRounded}`}>
-      {props?.icon}
+      {props?.children}
       <span>
         {props?.name}
         {props.count ? <span>({props?.count})</span> : <></>}
@@ -12,4 +12,4 @@ const MainBtn = (props) => {
   );
 };
 
-export default MainBtn;
+export default React.memo(MainBtn);

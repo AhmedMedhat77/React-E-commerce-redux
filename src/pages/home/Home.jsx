@@ -2,16 +2,55 @@ import React from "react";
 import Hero from "../../layouts/hero/Hero";
 import categoryData from "../../api/dummyData/categoryData";
 import CategoryCard from "../../components/categoryCard/CategoryCard";
-import Titile from "../../layouts/title/Titile";
+import Title from "../../layouts/title/Titile";
 import deviderImg from "../../assets/devider.png";
-import TrendingProductsData from "../../api/dummyData/trendingProducts";
 import ProductCard from "../../components/productCard/ProductCard";
 import Devider from "../../components/devider/Devider";
 import MainBtn from "../../components/button/MainBtn";
 import TestemonalCard from "../../components/testemonalCard/TestemonalCard";
-import TESTEMONALS from "../../api/dummyData/testemonals";
+import extrasApi from "../../api/dummyData/testemonals";
+import productsApi from "../../api/dummyData/trendingProducts";
 import NewsLetter from "../../components/newsLetter/NewsLetter";
+import { mergeOldState } from "../../helpers/merge";
+import { useDispatch, useSelector } from "react-redux";
+import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
+import { productAction } from "../../redux/Slice/productSlice";
+
 const Home = () => {
+  const testmonial = useSelector((s) => s.testmonial);
+  const product = useSelector((s) => s.product);
+
+  const dispatch = useDispatch();
+  const [homeState, set_homeState] = React.useState({
+    reviews: [],
+    is_reviews_loading: false,
+  });
+
+  React.useEffect(() => {
+    extrasApi()
+      .get_reviews()
+      .then((r) => {
+        //some logic here
+        dispatch(testmonialsAction.set({ reviews: r }));
+      });
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    productsApi()
+      .get_products()
+      .then((r) => {
+        //some logic here
+        dispatch(productAction.set({ data: r }));
+      });
+  }, [dispatch]);
+
+  const addToCart = React.useCallback(
+    (item) => {
+      dispatch(productAction.addToCart(item));
+    },
+    [dispatch]
+  );
+
   return (
     <>
       <Hero />
@@ -30,7 +69,7 @@ const Home = () => {
         </div>
       </section>
       <section className="trending-products">
-        <Titile
+        <Title
           title=" trending products"
           description="
 
@@ -39,15 +78,9 @@ Check the hottest designs of the week. These rising stars are worth your attenti
         />
         <div className="container mt-m">
           <div className="grid ">
-            {TrendingProductsData.map((item) => {
+            {product.data.map((item) => {
               return (
-                <ProductCard
-                  key={item.id}
-                  img={item.img}
-                  name={item.name}
-                  author={item.author}
-                  price={item.price}
-                />
+                <ProductCard {...item} onCartClick={addToCart} key={item.id} />
               );
             })}
           </div>
@@ -65,7 +98,7 @@ Mockups Design File PSD, Ai, EPS"
       </section>
 
       <section className="category-tabs">
-        <Titile
+        <Title
           title=" trending products"
           description="
 
@@ -110,7 +143,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
           className="trending-products"
           style={{ borderBottom: "1px solid #343a40" }}
         >
-          <Titile
+          <Title
             title=" trending products"
             description="
 
@@ -119,14 +152,12 @@ Check the hottest designs of the week. These rising stars are worth your attenti
           />
           <div className="container mt-m">
             <div className="grid ">
-              {TrendingProductsData.map((item) => {
+              {product.data.map((item) => {
                 return (
                   <ProductCard
+                    {...item}
+                    onCartClick={addToCart}
                     key={item.id}
-                    img={item.img}
-                    name={item.name}
-                    author={item.author}
-                    price={item.price}
                   />
                 );
               })}
@@ -137,16 +168,18 @@ Check the hottest designs of the week. These rising stars are worth your attenti
       <section className="testemonal">
         <div className="container">
           <div className="grid">
-            {TESTEMONALS.map((item) => {
-              return (
-                <TestemonalCard
-                  name={item.name}
-                  text={item.text}
-                  key={item.id}
-                  job={item.job}
-                />
-              );
-            })}
+            {homeState.is_reviews_loading
+              ? "loading..."
+              : testmonial.reviews.map((item) => {
+                  return (
+                    <TestemonalCard
+                      name={item.name}
+                      text={item.text}
+                      key={item.id}
+                      job={item.job}
+                    />
+                  );
+                })}
           </div>
         </div>
       </section>
