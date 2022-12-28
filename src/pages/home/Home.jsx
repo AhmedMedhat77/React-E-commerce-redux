@@ -11,7 +11,7 @@ import TestemonalCard from "../../components/testemonalCard/TestemonalCard";
 import extrasApi from "../../api/dummyData/testemonals";
 import productsApi from "../../api/dummyData/trendingProducts";
 import NewsLetter from "../../components/newsLetter/NewsLetter";
-import { mergeOldState } from "../../helpers/merge";
+
 import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
 import { productAction } from "../../redux/Slice/productSlice";
@@ -19,12 +19,7 @@ import { productAction } from "../../redux/Slice/productSlice";
 const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
   const product = useSelector((s) => s.product);
-
   const dispatch = useDispatch();
-  const [homeState, set_homeState] = React.useState({
-    reviews: [],
-    is_reviews_loading: false,
-  });
 
   React.useEffect(() => {
     extrasApi()
@@ -168,18 +163,16 @@ Check the hottest designs of the week. These rising stars are worth your attenti
       <section className="testemonal">
         <div className="container">
           <div className="grid">
-            {homeState.is_reviews_loading
-              ? "loading..."
-              : testmonial.reviews.map((item) => {
-                  return (
-                    <TestemonalCard
-                      name={item.name}
-                      text={item.text}
-                      key={item.id}
-                      job={item.job}
-                    />
-                  );
-                })}
+            {testmonial.reviews.map((item) => {
+              return (
+                <TestemonalCard
+                  name={item.name}
+                  text={item.text}
+                  key={item.id}
+                  job={item.job}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
