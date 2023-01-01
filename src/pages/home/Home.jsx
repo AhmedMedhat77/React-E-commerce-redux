@@ -15,11 +15,16 @@ import NewsLetter from "../../components/newsLetter/NewsLetter";
 import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
 import { productAction } from "../../redux/Slice/productSlice";
+import useProducts, { Products } from "../../hook/useProducts";
 
 const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
-  const product = useSelector((s) => s.product);
   const dispatch = useDispatch();
+
+  const { product, loading, addToCart } = useProducts(
+    Products.Products,
+    Products.Cart
+  );
 
   React.useEffect(() => {
     extrasApi()
@@ -29,22 +34,6 @@ const Home = () => {
         dispatch(testmonialsAction.set({ reviews: r }));
       });
   }, [dispatch]);
-
-  React.useEffect(() => {
-    productsApi()
-      .get_products()
-      .then((r) => {
-        //some logic here
-        dispatch(productAction.set({ data: r }));
-      });
-  }, [dispatch]);
-
-  const addToCart = React.useCallback(
-    (item) => {
-      dispatch(productAction.addToCart(item));
-    },
-    [dispatch]
-  );
 
   return (
     <>
@@ -73,11 +62,19 @@ Check the hottest designs of the week. These rising stars are worth your attenti
         />
         <div className="container mt-m">
           <div className="grid ">
-            {product.data.map((item) => {
-              return (
-                <ProductCard {...item} onCartClick={addToCart} key={item.id} />
-              );
-            })}
+            {loading.is_products_loading ? (
+              <h1>Loading</h1>
+            ) : (
+              product.data.map((item) => {
+                return (
+                  <ProductCard
+                    {...item}
+                    onCartClick={addToCart}
+                    key={item.id}
+                  />
+                );
+              })
+            )}
           </div>
         </div>
       </section>

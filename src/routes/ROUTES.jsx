@@ -1,3 +1,4 @@
+import CartProducts from "../pages/cartProducts/CartProducts";
 import Home from "../pages/home/Home";
 
 const ROUTES = [
@@ -12,7 +13,7 @@ const ROUTES = [
     id: "shop",
     name: "Shop",
     path: "/shop",
-    Element: <></>,
+    Element: <CartProducts />,
     isHidden: false,
   },
   {

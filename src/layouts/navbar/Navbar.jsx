@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import Search from "../../components/search/Search";
 import {
@@ -36,6 +36,8 @@ const Navbar = (props) => {
       </ul>
     );
   }, [mobile, props.routes]);
+
+  const navigate = useNavigate();
   return (
     <header className="header">
       <div className="container">
@@ -46,7 +48,13 @@ const Navbar = (props) => {
             </button>
           </div>
           <div className="navbar__left">
-            <div className="navbar__left__logo">
+            <div
+              className="navbar__left__logo"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               <img src={logo} alt="Gosto" />
             </div>
           </div>
@@ -65,6 +73,9 @@ const Navbar = (props) => {
               <MainBtn
                 name="MY CART"
                 type="btn--primary"
+                onClick={() => {
+                  navigate("/shop");
+                }}
                 size="btn--l"
                 count={cartCount}
                 isRounded="btn--rounded-m"
