@@ -9,12 +9,12 @@ import Devider from "../../components/devider/Devider";
 import MainBtn from "../../components/button/MainBtn";
 import TestemonalCard from "../../components/testemonalCard/TestemonalCard";
 import extrasApi from "../../api/dummyData/testemonals";
-import productsApi from "../../api/dummyData/trendingProducts";
+
 import NewsLetter from "../../components/newsLetter/NewsLetter";
 
 import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
-import { productAction } from "../../redux/Slice/productSlice";
+
 import useProducts, { Products } from "../../hook/useProducts";
 
 const Home = () => {
@@ -25,6 +25,8 @@ const Home = () => {
     Products.Products,
     Products.Cart
   );
+
+  console.log(product.filter)
 
   React.useEffect(() => {
     extrasApi()
@@ -65,7 +67,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
             {loading.is_products_loading ? (
               <h1>Loading</h1>
             ) : (
-              product.data.map((item) => {
+              product.filter.map((item) => {
                 return (
                   <ProductCard
                     {...item}

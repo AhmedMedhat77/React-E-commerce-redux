@@ -1,46 +1,55 @@
 import CartProducts from "../pages/cartProducts/CartProducts";
 import Home from "../pages/home/Home";
 
+export const RoutePathes = Object.freeze({
+  Home: "/",
+  Shop: "/shop",
+  Pages: "/pages",
+  Blog: "/blog",
+  About: "/about",
+  Contact: "/contact",
+});
+
 const ROUTES = [
   {
     id: "home",
     name: "Home",
-    path: "/",
+    path: RoutePathes.Home,
     Element: <Home />,
     isHidden: false,
   },
   {
     id: "shop",
     name: "Shop",
-    path: "/shop",
+    path: RoutePathes.Shop,
     Element: <CartProducts />,
     isHidden: false,
   },
   {
     id: "pages",
     name: "Pages",
-    path: "/pages",
+    path: RoutePathes.Pages,
     Element: <></>,
     isHidden: false,
   },
   {
     id: "blog",
     name: "Blog",
-    path: "/blog",
+    path: RoutePathes.Blog,
     Element: <></>,
     isHidden: false,
   },
   {
     id: "about",
     name: "About",
-    path: "/about",
+    path: RoutePathes.About,
     Element: <></>,
     isHidden: false,
   },
   {
     id: "contact",
     name: "Contact",
-    path: "/contact",
+    path: RoutePathes.Contact,
     Element: <></>,
     isHidden: false,
   },

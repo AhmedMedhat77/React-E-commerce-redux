@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import Search from "../../components/search/Search";
 import {
@@ -10,11 +10,32 @@ import {
 } from "react-icons/ai";
 import { HiShoppingBag } from "react-icons/hi";
 import MainBtn from "../../components/button/MainBtn";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RoutePathes } from "../../routes/ROUTES";
+import { productAction } from "../../redux/Slice/productSlice";
 
 const Navbar = (props) => {
   const [mobile, setMobile] = useState(false);
   const cartCount = useSelector((s) => s.product.cart.count);
+  const location = useLocation();
+  console.log("location:", location);
+  const dispatch = useDispatch();
+
+  const onSearch = (e) => {
+    const { value } = e.target;
+    switch (location.pathname) {
+      case RoutePathes.Home:
+        dispatch(productAction.filterProducts({ name: value, price: value }));
+
+        return;
+      case RoutePathes.Shop:
+        {
+        }
+        return;
+      default:
+        return;
+    }
+  };
 
   const navbarLinks = React.useMemo(() => {
     return (
@@ -61,7 +82,7 @@ const Navbar = (props) => {
           <div className="navbar__center">{navbarLinks}</div>
           <div className="navbar__right">
             <div className="navbar__right__actions">
-              <Search placeHolder="search products..." />
+              <Search placeHolder="search products..." onChange={onSearch} />
               <div className="navbar__right__actions-user">
                 <button className="icon icon--l">
                   <AiOutlineUser />

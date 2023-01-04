@@ -7,6 +7,7 @@ const Search = (props) => {
         type="text"
         placeholder={props?.placeHolder}
         className="search__input"
+        onChange={props.onChange}
       />
       <AiOutlineSearch className={`search__button ${props.typo}`} />
     </div>

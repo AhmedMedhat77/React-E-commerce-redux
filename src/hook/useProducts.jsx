@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import extrasApi from "../api/dummyData/testemonals";
+
 import productsApi from "../api/dummyData/trendingProducts";
 import { mergeOldState } from "../helpers/merge";
 import { productAction } from "../redux/Slice/productSlice";
@@ -20,7 +20,7 @@ const useProducts = (...productApi) => {
   });
 
   React.useEffect(() => {
-    console.log("ssss");
+    console.log("effect");
 
     productApi.forEach((v) => {
       switch (v) {
@@ -31,7 +31,7 @@ const useProducts = (...productApi) => {
           productsApi()
             .get_products()
             .then((r) => {
-              dispatch(productAction.set({ data: r }));
+              dispatch(productAction.set({ data: r, filter: r }));
             })
             .finally(() => {
               dispatch(productAction.set({ is_products_loading: false }));
@@ -74,8 +74,14 @@ const useProducts = (...productApi) => {
     },
     [dispatch]
   );
+  const deleteFromCart = React.useCallback(
+    (item) => {
+      dispatch(productAction.deleteFromCart(item));
+    },
+    [dispatch]
+  );
 
-  return { product, loading, addToCart, removeFromCart };
+  return { product, loading, addToCart, removeFromCart, deleteFromCart };
 };
 
 export default useProducts;

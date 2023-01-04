@@ -1,0 +1,19 @@
+.single-card {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $--margin-s;
+  & img {
+    max-width: 100px;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: $--paddding-xs2;
+  }
+  &__actions {
+    & button {
+      padding: $--paddding-s $--paddding-m;
+      margin-left: $--margin-xs1;
+    }
+  }
+}
