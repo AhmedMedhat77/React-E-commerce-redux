@@ -1,0 +1,6 @@
+.rating-stars {
+  @extend .typo--l;
+  & svg {
+    color: goldenrod;
+  }
+}

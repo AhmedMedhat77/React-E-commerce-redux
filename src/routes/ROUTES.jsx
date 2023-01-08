@@ -1,5 +1,6 @@
 import CartProducts from "../pages/cartProducts/CartProducts";
 import Home from "../pages/home/Home";
+import SingleProductCard from "../pages/singleCart/SingleCart";
 
 export const RoutePathes = Object.freeze({
   Home: "/",
@@ -29,7 +30,7 @@ const ROUTES = [
     id: "pages",
     name: "Pages",
     path: RoutePathes.Pages,
-    Element: <></>,
+    Element: <SingleProductCard />,
     isHidden: false,
   },
   {

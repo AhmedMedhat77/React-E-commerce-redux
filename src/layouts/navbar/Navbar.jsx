@@ -28,10 +28,10 @@ const Navbar = (props) => {
         dispatch(productAction.filterProducts({ name: value, price: value }));
 
         return;
-      case RoutePathes.Shop:
-        {
-        }
+      case RoutePathes.Shop: {
+        dispatch(productAction.filterProducts({ name: value, price: value }));
         return;
+      }
       default:
         return;
     }
@@ -91,18 +91,20 @@ const Navbar = (props) => {
                   <AiOutlineHeart />
                 </button>
               </div>
-              <MainBtn
-                name="MY CART"
-                type="btn--primary"
-                onClick={() => {
-                  navigate("/shop");
-                }}
-                size="btn--l"
-                count={cartCount}
-                isRounded="btn--rounded-m"
-              >
-                <HiShoppingBag />
-              </MainBtn>
+              <Link to="/shop">
+                <MainBtn
+                  name="MY CART"
+                  type="btn--primary"
+                  onClick={() => {
+                    navigate("/shop");
+                  }}
+                  size="btn--l"
+                  count={cartCount}
+                  isRounded="btn--rounded-m"
+                >
+                  <HiShoppingBag />
+                </MainBtn>
+              </Link>
             </div>
           </div>
         </nav>

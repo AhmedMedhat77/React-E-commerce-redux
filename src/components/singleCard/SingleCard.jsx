@@ -33,7 +33,7 @@ const SingleCard = (props) => {
       <div>
         <div className="single-card__count">Items: {item?.count}</div>
 
-        <div className="single-card__totoal">${props.total}</div>
+        <div className="single-card__totoal">${props?.total}</div>
       </div>
     </div>
   );

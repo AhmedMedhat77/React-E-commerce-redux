@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import SingleCard from "../../components/singleCard/SingleCard";
 import useProducts from "../../hook/useProducts";
 import Titile from "../../layouts/title/Titile";
@@ -7,7 +6,6 @@ import Titile from "../../layouts/title/Titile";
 const CartProducts = () => {
   const { product, addToCart, removeFromCart, deleteFromCart } = useProducts();
   console.log(product);
-
 
   return (
     <section>

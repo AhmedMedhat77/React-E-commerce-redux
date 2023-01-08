@@ -26,13 +26,12 @@ const Home = () => {
     Products.Cart
   );
 
-  console.log(product.filter)
+  console.log(product.filter);
 
   React.useEffect(() => {
     extrasApi()
       .get_reviews()
       .then((r) => {
-        //some logic here
         dispatch(testmonialsAction.set({ reviews: r }));
       });
   }, [dispatch]);
@@ -43,14 +42,7 @@ const Home = () => {
       <section className="category">
         <div className="container">
           {categoryData.map((item) => {
-            return (
-              <CategoryCard
-                key={item.id}
-                img={item.img}
-                name={item.name}
-                itemsCount={item.itemsCount}
-              />
-            );
+            return <CategoryCard key={item.id} {...item} />;
           })}
         </div>
       </section>
