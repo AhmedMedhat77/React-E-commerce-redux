@@ -26,7 +26,7 @@ const Hero = () => {
             <option value="PC">Pc</option>
             <option value="Furneture">Furneture</option>
           </select>
-          <Search placeHolder="Search Products..." typo="typo--xl" />
+          <Search placeHolder="Search Products..." btnType='search' typo="typo--xl" />
         </div>
         <p className="hero__text">
           <span>Examples:</span> Mockup, PSD, Theme Design, Image…

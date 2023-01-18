@@ -10,7 +10,7 @@ const NewsLetter = (props) => {
           <h3>{props.title}</h3>
           <p>{props.description}</p>
         </div>
-        <Search placeHolder="Your Email Adress"  type=""/>
+        <Search placeHolder="Your Email Adress"  typo="typo--xl"/>
       </div>
     </div>
   );

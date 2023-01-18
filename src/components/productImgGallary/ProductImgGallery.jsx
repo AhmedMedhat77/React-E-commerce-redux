@@ -1,6 +1,17 @@
 import React from "react";
 import { AiOutlineHeart, AiOutlineShareAlt } from "react-icons/ai";
 import placeHolder from "../../assets/iphone.jpg";
+const data ={
+  imgList:[
+    {
+      name:'',
+      description:'', 
+
+    }
+  ], 
+  viewImg:'', 
+
+}
 const ProductImgGallery = (props) => {
   return (
     <div className="img-gallery">

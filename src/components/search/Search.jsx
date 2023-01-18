@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiFillMail, AiOutlineSearch } from "react-icons/ai";
 const Search = (props) => {
   return (
     <div className="search">
@@ -9,7 +9,11 @@ const Search = (props) => {
         className="search__input"
         onChange={props.onChange}
       />
-      <AiOutlineSearch className={`search__button ${props.typo}`} />
+      {props.btnType === "search" ? (
+        <AiOutlineSearch className={`search__button ${props.typo}`} />
+      ) : (
+        <AiFillMail className={`search__button ${props.typo}`} />
+      )}
     </div>
   );
 };

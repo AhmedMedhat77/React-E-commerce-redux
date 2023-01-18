@@ -82,7 +82,11 @@ const Navbar = (props) => {
           <div className="navbar__center">{navbarLinks}</div>
           <div className="navbar__right">
             <div className="navbar__right__actions">
-              <Search placeHolder="search products..." onChange={onSearch} />
+              <Search
+                placeHolder="search products..."
+                btnType="search"
+                onChange={onSearch}
+              />
               <div className="navbar__right__actions-user">
                 <button className="icon icon--l">
                   <AiOutlineUser />
