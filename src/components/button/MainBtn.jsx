@@ -2,7 +2,10 @@ import React from "react";
 
 const MainBtn = (props) => {
   return (
-    <button className={`btn ${props?.type} ${props?.size} ${props?.isRounded}`}>
+    <button
+      onClick={props.click}
+      className={`btn ${props?.type} ${props?.size} ${props?.isRounded}`}
+    >
       {props?.children}
       <span>
         {props?.name}

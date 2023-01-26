@@ -1,5 +1,6 @@
 import React from "react";
-import { AiFillMail, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaTelegramPlane } from "react-icons/fa";
 const Search = (props) => {
   return (
     <div className="search">
@@ -12,7 +13,7 @@ const Search = (props) => {
       {props.btnType === "search" ? (
         <AiOutlineSearch className={`search__button ${props.typo}`} />
       ) : (
-        <AiFillMail className={`search__button ${props.typo}`} />
+        <FaTelegramPlane className={`search__button ${props.typo}`} />
       )}
     </div>
   );

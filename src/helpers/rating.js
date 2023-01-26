@@ -9,7 +9,7 @@ export function rate(number) {
   } else if (number % 1 !== 0) {
     let getDecimalVal = number.toString().indexOf(".");
     let decimalPart = number.toString().substring(getDecimalVal + 1);
-    console.log(decimalPart);
+    // console.log(decimalPart);
     decimalPart >= 3 ? (
       RateArr.push(
         <FaStarHalf
@@ -22,7 +22,7 @@ export function rate(number) {
     );
   }
   for (let i = 0; i < number - 1; i++) {
-    RateArr.unshift(<AiFillStar key={i} />);
+    RateArr.unshift(<AiFillStar key={i + Math.floor(Math.random() * 10000)} />);
   }
   return [...RateArr];
 }

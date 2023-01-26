@@ -18,7 +18,7 @@ const Navbar = (props) => {
   const [mobile, setMobile] = useState(false);
   const cartCount = useSelector((s) => s.product.cart.count);
   const location = useLocation();
-  console.log("location:", location);
+  // console.log("location:", location);
   const dispatch = useDispatch();
 
   const onSearch = (e) => {

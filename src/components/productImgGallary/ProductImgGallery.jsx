@@ -1,17 +1,41 @@
 import React from "react";
 import { AiOutlineHeart, AiOutlineShareAlt } from "react-icons/ai";
 import placeHolder from "../../assets/iphone.jpg";
-const data ={
-  imgList:[
-    {
-      name:'',
-      description:'', 
+import placeHolder2 from "../../assets/dotsBanner.jpg";
+import placeHolder3 from "../../assets/devider.png";
+import placeHolder4 from "../../assets/floatIpone.jpg";
 
-    }
-  ], 
-  viewImg:'', 
-
-}
+const data = [
+  {
+    imgList: [
+      {
+        name: "image",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, cumque.",
+        src: placeHolder,
+      },
+      {
+        name: "image",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, cumque.",
+        src: placeHolder2,
+      },
+      {
+        name: "image",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, cumque.",
+        src: placeHolder3,
+      },
+      {
+        name: "image",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, cumque.",
+        src: placeHolder4,
+      },
+    ],
+  },
+  { viewImg: "" },
+];
 const ProductImgGallery = (props) => {
   return (
     <div className="img-gallery">

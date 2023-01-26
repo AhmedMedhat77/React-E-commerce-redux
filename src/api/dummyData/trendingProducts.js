@@ -14,6 +14,7 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "111.0",
               img: floatIhpone,
+              rate: 3.0,
             },
             {
               id: "2",
@@ -21,6 +22,7 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "80.0",
               img: float,
+              rate: 4.0,
             },
             {
               id: "3",
@@ -28,6 +30,7 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "80.0",
               img: floatIhpone,
+              rate: 5.0,
             },
             {
               id: "4",
@@ -35,6 +38,7 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "100.0",
               img: float,
+              rate: 2.3,
             },
             {
               id: "5",

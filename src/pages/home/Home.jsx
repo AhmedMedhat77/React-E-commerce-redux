@@ -9,13 +9,11 @@ import Devider from "../../components/devider/Devider";
 import MainBtn from "../../components/button/MainBtn";
 import TestemonalCard from "../../components/testemonalCard/TestemonalCard";
 import extrasApi from "../../api/dummyData/testemonals";
-
 import NewsLetter from "../../components/newsLetter/NewsLetter";
-
 import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
-
 import useProducts, { Products } from "../../hook/useProducts";
+import CategoryButtonsApi from "../../api/dummyData/productFilterBtns";
 
 const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
@@ -26,7 +24,15 @@ const Home = () => {
     Products.Cart
   );
 
-  console.log(product.filter);
+  const filterBtns = (btnName) => {
+    // console.log(categoryData.filter((item) => item.category === btnName));
+    console.log(btnName.toLowerCase());
+    if (btnName.toLowerCase() === "icon") {
+      return categoryData.filter(
+        (item) => item.category === btnName.toLowerCase()
+      );
+    }
+  };
 
   React.useEffect(() => {
     extrasApi()
@@ -49,10 +55,7 @@ const Home = () => {
       <section className="trending-products">
         <Title
           title=" trending products"
-          description="
-
-Check the hottest designs of the week. These rising stars are worth your attention.
-"
+          description="Check the hottest designs of the week. These rising stars are worth your attention."
         />
         <div className="container mt-m">
           <div className="grid ">
@@ -93,36 +96,15 @@ Check the hottest designs of the week. These rising stars are worth your attenti
         />
         <div className="container">
           <div className="category-tabs__btns">
-            <MainBtn
-              name="All Products"
-              type="btn--secondary"
-              size="btn--m"
-              isRounded="btn--rounded-m"
-            />
-            <MainBtn
-              name="Web Themes"
-              type="btn--secondary"
-              size="btn--m"
-              isRounded="btn--rounded-m"
-            />
-            <MainBtn
-              name="Mockups"
-              type="btn--secondary"
-              size="btn--m"
-              isRounded="btn--rounded-m"
-            />
-            <MainBtn
-              name="Icons"
-              type="btn--secondary"
-              size="btn--m"
-              isRounded="btn--rounded-m"
-            />
-            <MainBtn
-              name="Image Stocks"
-              type="btn--secondary"
-              size="btn--m"
-              isRounded="btn--rounded-m"
-            />
+            {CategoryButtonsApi.map((btn) => {
+              return (
+                <MainBtn
+                  {...btn}
+                  key={btn.id}
+                  click={() => filterBtns(btn.name)}
+                />
+              );
+            })}
           </div>
         </div>
         <section
@@ -131,10 +113,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
         >
           <Title
             title=" trending products"
-            description="
-
-Check the hottest designs of the week. These rising stars are worth your attention.
-"
+            description="Check the hottest designs of the week. These rising stars are worth your attention."
           />
           <div className="container mt-m">
             <div className="grid ">
@@ -155,14 +134,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
         <div className="container">
           <div className="grid">
             {testmonial.reviews.map((item) => {
-              return (
-                <TestemonalCard
-                  name={item.name}
-                  text={item.text}
-                  key={item.id}
-                  job={item.job}
-                />
-              );
+              return <TestemonalCard key={item.id} {...item} />;
             })}
           </div>
         </div>

@@ -2,7 +2,8 @@
   border: none;
   outline: none;
   text-align: center;
-  margin: 0 auto;
+  margin: 1rem auto;
+  // width: -moz-available;
   cursor: pointer;
   border: 1px solid transparent;
   &:hover {

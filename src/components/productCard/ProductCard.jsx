@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillStar, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
 import { HiShoppingBag } from "react-icons/hi";
+import { rate } from "../../helpers/rating";
 const ProductCard = (props) => {
   return (
     <div className="product-card">
@@ -30,10 +31,7 @@ const ProductCard = (props) => {
         <p>{props.author}</p>
       </div>
       <div className="product-card__footer">
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
+        {props.rate ? rate(props?.rate) : <AiFillStar />}
         <p className="product-card__footer__price">${props?.price}</p>
       </div>
     </div>
