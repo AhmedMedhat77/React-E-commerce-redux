@@ -19,7 +19,7 @@ const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
   const dispatch = useDispatch();
 
-  const { product, loading, addToCart } = useProducts(
+  const { product, loading, addToCart, filterProducts } = useProducts(
     Products.Products,
     Products.Cart
   );
@@ -101,7 +101,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
                 <MainBtn
                   {...btn}
                   key={btn.id}
-                  click={() => filterBtns(btn.name)}
+                  click={() => filterProducts({ category: btn.id })}
                 />
               );
             })}
@@ -117,7 +117,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
           />
           <div className="container mt-m">
             <div className="grid ">
-              {product.data.map((item) => {
+              {product.filter.map((item) => {
                 return (
                   <ProductCard
                     {...item}

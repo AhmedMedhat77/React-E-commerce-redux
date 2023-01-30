@@ -15,6 +15,7 @@ const productsApi = function () {
               price: "111.0",
               img: floatIhpone,
               rate: 3.0,
+              category:"web"
             },
             {
               id: "2",
@@ -23,6 +24,7 @@ const productsApi = function () {
               price: "80.0",
               img: float,
               rate: 4.0,
+              category:"web"
             },
             {
               id: "3",
@@ -31,6 +33,7 @@ const productsApi = function () {
               price: "80.0",
               img: floatIhpone,
               rate: 5.0,
+              category:"web"
             },
             {
               id: "4",
@@ -39,6 +42,7 @@ const productsApi = function () {
               price: "100.0",
               img: float,
               rate: 2.3,
+              category:"web"
             },
             {
               id: "5",
@@ -46,6 +50,8 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "100.0",
               img: floatIhpone,
+              rate: 2.3,
+              category:"mockups"
             },
             {
               id: "6",
@@ -53,6 +59,8 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "100.0",
               img: float,
+              rate: 3.3,
+              category:"stocks"
             },
             {
               id: "7",
@@ -60,6 +68,8 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "100.0",
               img: iphone,
+              rate: 4.3,
+              category:"icons"
             },
             {
               id: "8",
@@ -67,6 +77,8 @@ const productsApi = function () {
               author: "by Blueskytechco in Mockups",
               price: "111.00",
               img: float,
+              rate: 5.3,
+              category:"web"
             },
           ]);
         }, 1000);

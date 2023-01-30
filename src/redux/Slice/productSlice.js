@@ -14,8 +14,8 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     filterProducts: function (oldState, action) {
+      //payload example {name:"abc",price:20}
       const filterObj = action.payload;
-      // {name1:"ahmed",price:"20"} => [ [ name:ahmed],[price,20]]
       const filteredData = oldState.data.filter((v) => {
         return Object.entries(filterObj).some(([key, value]) => {
           return v[key]?.toString()?.includes(value?.toString());

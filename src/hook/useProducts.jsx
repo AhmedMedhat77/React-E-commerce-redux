@@ -81,7 +81,17 @@ const useProducts = (...productApi) => {
     [dispatch]
   );
 
-  return { product, loading, addToCart, removeFromCart, deleteFromCart };
+  /**
+   * @example filterProducts({name:"abc",price:20})
+   */
+  const filterProducts = React.useCallback(
+    (item) => {
+      dispatch(productAction.filterProducts(item));
+    },
+    [dispatch]
+  );
+
+  return { product, loading, addToCart, removeFromCart, deleteFromCart, filterProducts };
 };
 
 export default useProducts;
