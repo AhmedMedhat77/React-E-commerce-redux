@@ -11,6 +11,7 @@
 .category-tabs {
   &__btns {
     margin: $--margin-s auto;
+    display: flex;
     & button {
       margin-left: $--margin-s;
     }

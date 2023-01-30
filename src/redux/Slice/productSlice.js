@@ -117,6 +117,9 @@ const productsSlice = createSlice({
         data: oldState.data.map((v) =>
           v.id === selectedProduct.id ? { ...v, count: (v.count ?? 0) + 1 } : v
         ),
+        filter: oldState.filter.map((v) =>
+          v.id === selectedProduct.id ? { ...v, count: (v.count ?? 0) + 1 } : v
+        ),
       });
     },
     set: function (oldState, action) {

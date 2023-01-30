@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 const Search = (props) => {
   return (
-    <div className="search">
+    <div className={props.dark === "true" ? "search dark " : "search"}>
       <input
         type="text"
         placeholder={props?.placeHolder}

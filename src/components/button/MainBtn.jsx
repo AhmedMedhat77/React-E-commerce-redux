@@ -3,7 +3,7 @@ import React from "react";
 const MainBtn = (props) => {
   return (
     <button
-      onClick={props.click}
+      onClick={props.onClick}
       className={`btn ${props?.type} ${props?.size} ${props?.isRounded}`}
     >
       {props?.children}

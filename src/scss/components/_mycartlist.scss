@@ -1,0 +1,30 @@
+.mycart-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #fff;
+  width: 29vw;
+  color: $--color-primary;
+  z-index: 99;
+  padding: $--paddding-s $--paddding-m;
+  &__top {
+    &__title {
+      @extend .flex-between;
+      padding: $--paddding-s $--paddding-s;
+      @extend .typo--m;
+      border-bottom: 1px solid #eee;
+      & svg {
+        @extend .typo--xl;
+        cursor: pointer;
+        &:hover{
+            transition: $--transition;
+            color: $--color-secondary;
+        }
+      }
+    }
+  }
+  &__center {
+    margin-top: $--margin-m;
+  }
+}

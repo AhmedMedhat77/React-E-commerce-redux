@@ -14,12 +14,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
 import useProducts, { Products } from "../../hook/useProducts";
 import CategoryButtonsApi from "../../api/dummyData/productFilterBtns";
+import MyCartList from "../../components/myCartList/MyCartList";
 
 const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
   const dispatch = useDispatch();
 
-  const { product, loading, addToCart, filterProducts } = useProducts(
+  const { product, loading, addToCart, filterProducts ,deleteFromCart } = useProducts(
     Products.Products,
     Products.Cart
   );
@@ -44,6 +45,7 @@ const Home = () => {
 
   return (
     <>
+      
       <Hero />
       <section className="category">
         <div className="container">

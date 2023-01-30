@@ -1,18 +1,31 @@
 .search {
   position: relative;
   display: flex;
+  flex: 1;
   align-items: center;
-  width: 100%;
+  &.dark {
+    & input {
+      color: $--color-white;
+      background-color: #1f2637;
+    }
+    & .search__button {
+      color: $--color-white;
+    }
+  }
   &__input {
     outline: none;
     border: none;
-    padding: $--paddding-m $--paddding-l;
+    padding: $--paddding-s $--paddding-xl;
     border-radius: $--paddding-m;
     width: 100%;
+    &::placeholder {
+      color: $--color-darker-white;
+    }
   }
   &__button {
     position: absolute;
     right: 1rem;
     cursor: pointer;
+    // color: $--color-dark-white;
   }
 }

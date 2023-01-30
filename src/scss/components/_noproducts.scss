@@ -1,0 +1,16 @@
+.no-product {
+  margin-top: $--margin-m;
+  & img {
+    opacity: 0.3;
+  }
+  & p {
+    text-align: center;
+    margin-top: $--margin-l;
+    @extend .typo--m;
+    text-transform: capitalize;
+  }
+  & a {
+    text-transform: uppercase;
+    @extend .typo--l;
+  }
+}

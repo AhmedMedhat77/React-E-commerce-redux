@@ -1,0 +1,39 @@
+.cardlist-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  cursor: pointer;
+  margin-bottom: $--margin-m;
+  &:hover .cardlist-item__right {
+    color: $--color-secondary;
+    transition: $--transition;
+  }
+  &__left {
+    width: 45%;
+
+    & img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__right {
+    &__text {
+      @extend .typo--s;
+      & p {
+        color: #777;
+      }
+    }
+    &__close {
+      position: absolute;
+      top: -1rem;
+      right: -0.5rem;
+      @extend .typo--l;
+      cursor: pointer;
+      &:hover {
+        color: $--color-secondary;
+        transition: $--transition;
+      }
+    }
+  }
+}

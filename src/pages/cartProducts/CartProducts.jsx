@@ -16,6 +16,7 @@ const CartProducts = () => {
             <div>no items in cart </div>
           ) : (
             product?.cart.product.map((v) => {
+
               return (
                 <SingleCard
                   item={v}
