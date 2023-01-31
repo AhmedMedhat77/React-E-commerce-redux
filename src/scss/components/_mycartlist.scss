@@ -1,13 +1,21 @@
 .mycart-list {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -500px;
   height: 100vh;
   background-color: #fff;
-  width: 29vw;
+  width: 0;
   color: $--color-primary;
-  z-index: 99;
+  z-index: 100;
   padding: $--paddding-s $--paddding-m;
+  opacity: 0.2;
+  &.active {
+    right: 0;
+    opacity: 1;
+    transition: $--transition;
+    width: 30rem;
+  }
+
   &__top {
     &__title {
       @extend .flex-between;
@@ -17,9 +25,9 @@
       & svg {
         @extend .typo--xl;
         cursor: pointer;
-        &:hover{
-            transition: $--transition;
-            color: $--color-secondary;
+        &:hover {
+          transition: $--transition;
+          color: $--color-secondary;
         }
       }
     }

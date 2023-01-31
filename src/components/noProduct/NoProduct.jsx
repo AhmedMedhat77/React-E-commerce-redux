@@ -7,11 +7,15 @@ const NoProduct = (props) => {
       <img src={noProductImg} alt="No Products in cart" />
       <p>No Products In The Cart</p>
 
-      <Link to="/" className="btn btn--secondary btn--m btn--rounded-s">
+      <Link
+        to={props?.path}
+        onClick={props?.onClick}
+        className="btn btn--secondary btn--m btn--rounded-s"
+      >
         Return To Shop
       </Link>
     </div>
   );
 };
 
-export default NoProduct;
+export default React.memo(NoProduct);

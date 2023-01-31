@@ -4,11 +4,13 @@ import MyCartListItem from "../myCartListItem/MyCartListItem";
 import NoProduct from "../noProduct/NoProduct";
 
 const MyCartList = (props) => {
-  if (!props.open) {
-    return <></>;
-  }
   return (
-    <div className="mycart-list">
+    <div className={props.open ? "mycart-list active" : "mycart-list"}>
+      {props.open ? (
+        <div className="overlay active" />
+      ) : (
+        <div className="overlay" />
+      )}
       <div className="mycart-list__top">
         <div className="mycart-list__top__title">
           <h3>{props.title}</h3>
@@ -16,7 +18,7 @@ const MyCartList = (props) => {
         </div>
       </div>
       {!props.products || props.products.length === 0 ? (
-        <NoProduct />
+        <NoProduct path={props.path} onClick={props.onClose} />
       ) : (
         <div className="mycart-list__center">
           {props?.products?.map((v) => {
@@ -30,6 +32,7 @@ const MyCartList = (props) => {
           })}
         </div>
       )}
+      <div className="mycart-list__actions"></div>
       <div className="mycart-list__footer"></div>
     </div>
   );

@@ -86,3 +86,22 @@ $--transition: var(--transition);
   justify-content: space-between;
   align-items: center;
 }
+
+// .overlay {
+//   background-color: rgba(0, 0, 0, 0.6);
+//   width: calc(100% - 30rem);
+//   opacity: 0;
+//   // transition-delay: 2s;
+// }
+// .overlay.active {
+//   opacity: 1;
+//   transition-delay: 1s;
+//   transition: $--transition;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   height: 100%;
+//   z-index: 1;
+// }

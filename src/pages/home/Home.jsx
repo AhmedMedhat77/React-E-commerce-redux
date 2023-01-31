@@ -14,26 +14,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { testmonialsAction } from "../../redux/Slice/testmonialsSlice";
 import useProducts, { Products } from "../../hook/useProducts";
 import CategoryButtonsApi from "../../api/dummyData/productFilterBtns";
-import MyCartList from "../../components/myCartList/MyCartList";
 
 const Home = () => {
   const testmonial = useSelector((s) => s.testmonial);
   const dispatch = useDispatch();
 
-  const { product, loading, addToCart, filterProducts ,deleteFromCart } = useProducts(
+  const { product, loading, addToCart, filterProducts } = useProducts(
     Products.Products,
     Products.Cart
   );
 
-  const filterBtns = (btnName) => {
-    // console.log(categoryData.filter((item) => item.category === btnName));
-    console.log(btnName.toLowerCase());
-    if (btnName.toLowerCase() === "icon") {
-      return categoryData.filter(
-        (item) => item.category === btnName.toLowerCase()
-      );
-    }
-  };
+  // const filterBtns = (btnName) => {
+  //   // console.log(categoryData.filter((item) => item.category === btnName));
+  //   console.log(btnName.toLowerCase());
+  //   if (btnName.toLowerCase() === "icon") {
+  //     return categoryData.filter(
+  //       (item) => item.category === btnName.toLowerCase()
+  //     );
+  //   }
+  // };
 
   React.useEffect(() => {
     extrasApi()
@@ -45,7 +44,6 @@ const Home = () => {
 
   return (
     <>
-      
       <Hero />
       <section className="category">
         <div className="container">
@@ -103,7 +101,7 @@ Check the hottest designs of the week. These rising stars are worth your attenti
                 <MainBtn
                   {...btn}
                   key={btn.id}
-                  click={() => filterProducts({ category: btn.id })}
+                  onClick={() => filterProducts({ category: btn.id })}
                 />
               );
             })}

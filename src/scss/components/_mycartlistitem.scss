@@ -5,12 +5,13 @@
   gap: 1rem;
   cursor: pointer;
   margin-bottom: $--margin-m;
+  border-bottom: 1px solid #eee;
   &:hover .cardlist-item__right {
     color: $--color-secondary;
     transition: $--transition;
   }
   &__left {
-    width: 45%;
+    width: 20%;
 
     & img {
       max-width: 100%;

@@ -12,6 +12,7 @@
   &__btns {
     margin: $--margin-s auto;
     display: flex;
+    flex-wrap: wrap;
     & button {
       margin-left: $--margin-s;
     }

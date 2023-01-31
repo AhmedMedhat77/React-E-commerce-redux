@@ -67,9 +67,9 @@ const Navbar = (props) => {
     <>
       <MyCartList
         open={isCartOpen}
+        path="/"
         onClose={() => {
           setIsCartOpen(false);
-     
         }}
         products={product.cart.product}
         onDeleteItem={deleteFromCart}
@@ -121,7 +121,6 @@ const Navbar = (props) => {
                   type="btn--primary"
                   onClick={() => {
                     setIsCartOpen(true);
-            
                   }}
                   size="btn--l"
                   count={cartCount}

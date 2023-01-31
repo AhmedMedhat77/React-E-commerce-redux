@@ -87,6 +87,7 @@ const useProducts = (...productApi) => {
   const filterProducts = React.useCallback(
     (item) => {
       dispatch(productAction.filterProducts(item));
+      
     },
     [dispatch]
   );
