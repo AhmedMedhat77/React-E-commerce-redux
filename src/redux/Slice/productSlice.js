@@ -8,6 +8,10 @@ const initialState = {
   },
   data: [],
   filter: [],
+  wishList: {
+    count: 0,
+    product: [],
+  },
 };
 const productsSlice = createSlice({
   name: "product",
@@ -113,6 +117,46 @@ const productsSlice = createSlice({
         cart: {
           count: oldState.cart.count + 1,
           product: cart_products,
+        },
+        data: oldState.data.map((v) =>
+          v.id === selectedProduct.id ? { ...v, count: (v.count ?? 0) + 1 } : v
+        ),
+        filter: oldState.filter.map((v) =>
+          v.id === selectedProduct.id ? { ...v, count: (v.count ?? 0) + 1 } : v
+        ),
+      });
+    },
+    addToWishList: function (oldState, action) {
+      const selectedProduct = action.payload;
+
+      let index = -1;
+      let wishList_Products = oldState.wishList.product.filter((v, i) => {
+        if (v.id !== selectedProduct.id) {
+          return true;
+        }
+        index = i;
+        return false;
+      });
+
+      if (index !== -1) {
+        wishList_Products = [].concat(
+          [
+            ...wishList_Products.slice(0, index),
+            { ...selectedProduct, count: (selectedProduct.count ?? 0) + 1 },
+          ],
+          wishList_Products.slice(index, wishList_Products.length)
+        );
+      } else {
+        wishList_Products = [
+          ...wishList_Products,
+          { ...selectedProduct, count: (selectedProduct.count ?? 0) + 1 },
+        ];
+      }
+
+      return mergeDeep(oldState, {
+        wishList: {
+          count: oldState.wishList.count + 1,
+          product: wishList_Products,
         },
         data: oldState.data.map((v) =>
           v.id === selectedProduct.id ? { ...v, count: (v.count ?? 0) + 1 } : v

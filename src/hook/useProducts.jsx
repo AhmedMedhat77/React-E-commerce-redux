@@ -68,6 +68,12 @@ const useProducts = (...productApi) => {
     },
     [dispatch]
   );
+  const addToWishList = React.useCallback(
+    (item) => {
+      dispatch(productAction.addToWishList(item));
+    },
+    [dispatch]
+  );
   const removeFromCart = React.useCallback(
     (item) => {
       dispatch(productAction.removeFromCart(item));
@@ -87,12 +93,19 @@ const useProducts = (...productApi) => {
   const filterProducts = React.useCallback(
     (item) => {
       dispatch(productAction.filterProducts(item));
-      
     },
     [dispatch]
   );
 
-  return { product, loading, addToCart, removeFromCart, deleteFromCart, filterProducts };
+  return {
+    product,
+    loading,
+    addToCart,
+    removeFromCart,
+    deleteFromCart,
+    filterProducts,
+    addToWishList,
+  };
 };
 
 export default useProducts;

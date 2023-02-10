@@ -10,7 +10,12 @@ const ProductCard = (props) => {
       </div>
       <div className="product-card__actions">
         <button className="icon icon--rounded-lg">
-          <AiOutlineHeart />
+          <AiOutlineHeart
+            onClick={() => {
+              const newItem = { ...props };
+              delete newItem.onWishListClick;
+            }}
+          />
         </button>
         <button className="icon icon--rounded-lg">
           <AiOutlineSearch />
