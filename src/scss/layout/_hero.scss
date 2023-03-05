@@ -16,7 +16,7 @@
     &__title {
       margin-bottom: $--margin-s;
       line-height: 1;
-      @extend .typo--2xl;
+  @include media-prop(font-size,2.5rem,2rem,2.2rem);
       font-weight: 600;
       & label {
         display: block;
@@ -26,7 +26,7 @@
       }
     }
     &__description {
-      @extend .typo--xs;
+  @include media-prop(font-size,2rem,1.5rem,1.5rem);
     }
   }
   &__actions {

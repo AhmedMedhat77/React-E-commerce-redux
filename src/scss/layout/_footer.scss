@@ -1,12 +1,13 @@
 .footer {
   padding: $--paddding-m;
   border-top: 1px solid $--color-dark-white;
-  @extend .typo--l;
+@include media-prop(font-size,2rem,1.9rem , 1.8rem);
   color: $--color-dark-white;
-
+@include media-prop(flex-direction,row,column,column);
 
   @extend .flex-between;
   & img {
     max-width: 20rem;
   }
 }
+

@@ -2,7 +2,7 @@
   position: relative;
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) 0s;
   overflow: hidden;
-
+  border-radius: $--paddding-m;
   &:hover .product-card__image img {
     transform: scale(1.2);
     opacity: 1;
@@ -10,11 +10,13 @@
   &__image {
     border-radius: $--paddding-m;
     overflow: hidden;
+    max-width: 30rem;
     & img {
       transition-delay: 0.1s;
       transition-duration: 1.5s;
       opacity: 0.8;
-      object-fit: contain;
+      width: 100%;
+      object-fit: cover;
     }
   }
   &__actions {
@@ -27,7 +29,7 @@
     opacity: 0;
     transition: $--transition;
     & .icon {
-      @extend .typo--xl;
+      @include media-prop(font-size, 2.5rem, 2rem, 2.2rem);
       margin-left: $--margin-s;
       background-color: $--color-white;
     }
