@@ -44,6 +44,7 @@ const ProductImgGallery = (props) => {
         {/* {props?.imgs.map((img) => {
           return <img src={img} alt={props.name} key={img.id} />;
         })} */}
+        
         <img className="img-gallery__left__item" src={placeHolder} alt="" />
         <img className="img-gallery__left__item" src={placeHolder} alt="" />
         <img className="img-gallery__left__item" src={placeHolder} alt="" />
