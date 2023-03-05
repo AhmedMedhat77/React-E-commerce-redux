@@ -4,7 +4,7 @@
   text-align: center;
   margin: 1rem auto;
   @extend .flex-center;
- 
+
   cursor: pointer;
   border: 1px solid transparent;
   &:hover {
@@ -12,10 +12,10 @@
     color: $--color-primary;
   }
   &--m {
-    padding: 1.2rem 1.5rem;
+    @include media-prop(padding, 1.2rem 1.5rem, 1.3rem 1.5rem, 1.2rem 1.4rem);
   }
   &--l {
-   @include media-prop( padding,2.2rem 3rem , 1.8rem 2rem, 2rem 2.2rem);
+    @include media-prop(padding, 2.2rem 3rem, 1.8rem 2rem, 2rem 2.2rem);
   }
   &--primary {
     width: 15rem;

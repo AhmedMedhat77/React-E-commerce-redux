@@ -13,7 +13,7 @@
     right: 0;
     opacity: 1;
     transition: $--transition;
-    width: 30rem;
+    @include media-prop(width, 20rem, 20rem, 15rem);
   }
 
   &__top {
